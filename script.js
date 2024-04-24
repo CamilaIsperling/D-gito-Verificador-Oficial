@@ -4,7 +4,7 @@ document.getElementById('pisForm').addEventListener('submit', function(event) {
   const pis = document.getElementById('pisInput').value;
 
   if (pis.length !== 10 || !/^\d+$/.test(pis)) {
-    alert('Por favor, insira exatamente 10 algarismos numéricos.');
+    alert('Por favor, insira exatamente 10 números do CPF.');
     return;
   }
 

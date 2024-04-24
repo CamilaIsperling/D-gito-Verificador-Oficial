@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo do Dígito Verificador do PIS/PASEP</title>
+  <link rel="icon" href="https://45.178.180.21/dv_cpf/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://45.178.180.21/dv_cpf/favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="msapplication-TileImage" content="https://45.178.180.21/dv_cpf/favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Garantindo que o conteúdo ocupe toda a altura da página */
+      position: relative;
+    }
+
+    .logo {
+      top: 85px;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      z-index: 1;
+      max-width: 245px;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: auto; /* Centralizando o container */
+      z-index: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1px;
+      background-color: #e4e4e4;
+      color: #666666;
+      width: 100%; /* Ocupando toda a largura */
+      position: fixed; /* Posição fixa na parte inferior */
+      bottom: 0; /* Fixando no rodapé */
+      left: 0; /* Alinhando à esquerda */
+      font-size: 14px; /* Tamanho da fonte */
+    }
+
+    footer a {
+      text-decoration: none; /* Remover sublinhado do link */
+      color: #50359b; /* Cor do link */
+    }
+  </style>
+</head>
+<body>
+  <img src="secullum_logo.png" alt="Logo da Secullum Software" class="logo">
+  <div class="container">
+    <h1>Cálculo do Dígito Verificador do PIS/PASEP</h1>
+    <form id="pisForm">
+      <label for="pisInput">Insira os 10 algarismos do CPF:</label>
+      <input type="text" id="pisInput" maxlength="10" pattern="[0-9]{10}" required>
+      <button type="submit">Calcular Dígito Verificador</button>
+    </form>
+    <p id="resultado"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <footer>
+    Desenvolvido por <a href="https://www.linkedin.com/in/camilaisperling/" target="_blank">Camila Isperling</a>
+  </footer>
+</body>
+</html>

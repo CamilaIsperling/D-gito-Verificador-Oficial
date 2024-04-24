@@ -1,26 +1,24 @@
 document.getElementById('pisForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
-  // Remover pontuação e manter apenas dígitos
-  let pis = document.getElementById('pisInput').value.replace(/\D/g, '');
+  const pis = document.getElementById('pisInput').value;
 
-  // Validar se o PIS/PASEP tem exatamente 12 dígitos
-  if (pis.length !== 12 || !/^\d+$/.test(pis)) {
-    alert('Por favor, insira exatamente 12 algarismos numéricos.');
+  if (pis.length !== 10 || !/^\d+$/.test(pis)) {
+    alert('Por favor, insira exatamente 10 algarismos numéricos.');
     return;
   }
 
   let soma = 0;
-  const pesos = [3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8]; // números multiplicadores conforme a fórmula
+  const pesos = [3, 2, 9, 8, 7, 6, 5, 4, 3, 2]; // numeros multiplicadores conforme a formula
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 10; i++) {
     soma += parseInt(pis.charAt(i)) * pesos[i];
   }
 
   let digitoVerificador = soma % 11;
 
   if (digitoVerificador < 2 || digitoVerificador === 10) {
-    digitoVerificador = 0; // Se o resultado for menor que 2 ou igual a 10, o dígito verificador será 0
+    digitoVerificador = 0; // Se o resultado for menor que 2 ou igual a 10, o digito verificador sera 0
   } else {
     digitoVerificador = 11 - digitoVerificador; // Calculando o dígito verificador
   }

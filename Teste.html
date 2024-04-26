@@ -17,119 +17,47 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      min-height: 100vh; 
+      min-height: 100vh; /* Garantindo que o conteúdo ocupe toda a altura da página */
       position: relative;
     }
 
-.logo {
-  top: 3.5rem; 
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  max-width: 60vw; /* Largura máxima em relação à tela */
-  max-height: 30vh; /* Altura máxima em relação à tela */
-  position: fixed;
+    .logo {
+      position: absolute;
+      top: 3.5rem; /* 40px em rem */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      max-width: 60vw; /* Defina uma largura máxima em relação à largura da tela */
+      max-height: 30vh; /* Defina uma altura máxima em relação à altura da tela */
 }
 
-.container {
-  max-width: 90rem; /* Largura máxima em relação à tela */
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
-  margin: auto; /* Centralizando o container */
-  z-index: 0;
-  font-size: 2.0rem; 
-  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1); 
-  padding: 2rem; 
-}
-
-@media screen and (max-width: 2560px) {
-  .logo {
-    max-width: 40vw; 
-    max-height: 20vh; 
-    top: 2rem; /* Ajustando a distância do topo */
+@media screen and (max-width: 780px) {
+    .logo {
+      min-width: 60vw; /* Reduza a largura mínima para telas menores */
+      min-height: 15vh; /* Reduza a altura mínima para telas menores */
+      font-size: 50%; /* Reduza o tamanho da fonte para telas menores */
   }
+}
 
+    .container {
+      max-width: 90rem; /* Definindo a largura máxima em relação à largura da tela */
+      padding: 3rem; /* 20px em rem */
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1); /* 8px em rem */
+      margin: auto; /* Centralizando o container */
+      z-index: 0;
+      font-size: 2.0rem; /* 16px em rem */
+}
+
+@media screen and (max-width: 780px) {
   .container {
-    padding: 1rem; 
-    max-width: 80rem; 
-    max-height: 50rem; 
-    font-size: 1.8rem; 
+    max-width: 80%; /* Reduza a largura máxima para telas menores */
+    max-height: 80vh; /* Reduza a altura máxima para telas menores */
+    font-size: 4rem; /* 30% em rem */
   }
 }
 
-@media screen and (max-width: 1920px) {
-  .logo {
-    max-width: 54vw;
-    max-height: 25vh;
-    top: 1.5rem;
-  }
-
-  .container {
-    padding: 1rem; 
-    max-width: 60rem; 
-    max-height: 30rem; 
-    font-size: 1.4rem; 
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .logo {
-    max-width: 20rem;
-    max-height: 12rem;
-  }
-
-  .container {
-    padding: 0.1rem; 
-    max-width: 50rem; 
-    max-height: 20rem; 
-    font-size: 0.9rem; 
-  }
-}
-
-@media screen and (max-width: 854px) {
-  .logo {
-    max-width: 22vw; 
-    max-height: 30vh; 
-    top: 0.25rem; 
-  }
-
-  .container {
-    padding: 0.2rem; 
-    max-width: 85rem; 
-    max-height: 55rem; 
-    font-size: 0.85rem; 
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .logo {
-    max-width: 90vw; 
-    max-height: 19vh; 
-    top: 1rem; 
-  }
-
-  .container {
-    padding: 0.3rem; 
-    max-width: 80rem; 
-    max-height: 15rem; 
-    font-size: 0.7rem; 
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .logo {
-    max-width: 16vw; 
-    max-height: 18vh; 
-    top: 0.01rem; 
-  }
-
-  .container {
-    padding: 0.2rem; 
-    max-width: 20rem; 
-    max-height: 10rem; 
-    font-size: 0.5rem; 
-  }
-}
 
     h1 {
       text-align: center;
@@ -151,11 +79,10 @@
       border-radius: 4px;
       width: 100%;
       max-width: 300px;
-      font-size: 18px;
     }
 
     button {
-      padding: 12px 30px;
+      padding: 10px 20px;
       border: none;
       background-color: #007bff;
       color: #fff;
@@ -163,7 +90,6 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
       margin-top: 10px;
-      font-size: 0.99rem;
     }
 
     button:hover {
@@ -184,7 +110,7 @@
       position: fixed; /* Posição fixa na parte inferior */
       bottom: 0; /* Fixando no rodapé */
       left: 0; /* Alinhando à esquerda */
-      font-size: 15px; /* Tamanho da fonte */
+      font-size: 14px; /* Tamanho da fonte */
     }
 
     footer a {
